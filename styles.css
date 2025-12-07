@@ -617,13 +617,18 @@ textarea {
 .values__carousel-container {
     position: relative;
     padding: 0 3rem;
+    overflow: hidden;
 }
 
 .values__carousel {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
     gap: 2rem;
-    overflow: hidden;
+    transition: transform 0.5s ease-in-out;
+}
+
+.values__carousel .value__card {
+    min-width: calc((100% - 6rem) / 4);
+    flex-shrink: 0;
 }
 
 .carousel__button {
