@@ -442,11 +442,11 @@ if (valuesCarousel && valuesPrev && valuesNext) {
             dot.classList.toggle('active', index === currentPage);
         });
 
-        // Update button states
-        valuesPrev.style.opacity = currentPage === 0 ? '0.5' : '1';
-        valuesPrev.style.cursor = currentPage === 0 ? 'not-allowed' : 'pointer';
-        valuesNext.style.opacity = currentPage === totalPages - 1 ? '0.5' : '1';
-        valuesNext.style.cursor = currentPage === totalPages - 1 ? 'not-allowed' : 'pointer';
+        // Update button states - Always clickable for circular navigation
+        valuesPrev.style.opacity = '1';
+        valuesPrev.style.cursor = 'pointer';
+        valuesNext.style.opacity = '1';
+        valuesNext.style.cursor = 'pointer';
     }
 
     function goToPage(page) {
@@ -457,15 +457,21 @@ if (valuesCarousel && valuesPrev && valuesNext) {
     valuesPrev.addEventListener('click', () => {
         if (currentPage > 0) {
             currentPage--;
-            updateCarousel();
+        } else {
+            // Circle back to last page
+            currentPage = totalPages - 1;
         }
+        updateCarousel();
     });
 
     valuesNext.addEventListener('click', () => {
         if (currentPage < totalPages - 1) {
             currentPage++;
-            updateCarousel();
+        } else {
+            // Circle back to first page
+            currentPage = 0;
         }
+        updateCarousel();
     });
 
     // Initialize
