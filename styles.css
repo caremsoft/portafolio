@@ -581,6 +581,10 @@ textarea {
     border: 1px solid var(--border-color);
     text-align: center;
     transition: all var(--transition-base);
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .value__card:hover {
