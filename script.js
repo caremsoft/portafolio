@@ -408,103 +408,73 @@ const valuesNext = document.getElementById('values-next');
 const valuesDots = document.getElementById('values-dots');
 
 if (valuesCarousel && valuesPrev && valuesNext) {
-    const cards = Array.from(valuesCarousel.querySelectorAll('.value__card'));
+    const cards = valuesCarousel.querySelectorAll('.value__card');
     const totalCards = cards.length;
-    const cardsPerView = 4;
-    let currentIndex = 0;
+    const cardsPerPage = 4;
+    const totalPages = Math.ceil(totalCards / cardsPerPage);
+    let currentPage = 0;
 
-    // Clone first and last cards for infinite loop
-    const firstClones = cards.slice(0, cardsPerView).map(card => card.cloneNode(true));
-    const lastClones = cards.slice(-cardsPerView).map(card => card.cloneNode(true));
-
-    // Append clones
-    firstClones.forEach(clone => valuesCarousel.appendChild(clone));
-    lastClones.reverse().forEach(clone => valuesCarousel.insertBefore(clone, valuesCarousel.firstChild));
-
-    // Update cards array to include clones
-    const allCards = Array.from(valuesCarousel.querySelectorAll('.value__card'));
-
-    // Create dots (only for original cards)
-    const totalDots = totalCards;
-    for (let i = 0; i < totalDots; i++) {
+    // Create dots
+    for (let i = 0; i < totalPages; i++) {
         const dot = document.createElement('div');
         dot.classList.add('carousel__dot');
         if (i === 0) dot.classList.add('active');
-        dot.addEventListener('click', () => goToSlide(i));
+        dot.addEventListener('click', () => goToPage(i));
         valuesDots.appendChild(dot);
     }
 
     const dots = valuesDots.querySelectorAll('.carousel__dot');
 
-    function getCardWidth() {
-        // Calculate width dynamically including gap
-        const card = allCards[0];
-        const gap = parseFloat(getComputedStyle(valuesCarousel).gap) || 0;
-        return card.getBoundingClientRect().width + gap;
-    }
+    function updateCarousel() {
+        cards.forEach((card, index) => {
+            const startIndex = currentPage * cardsPerPage;
+            const endIndex = startIndex + cardsPerPage;
 
-    function updateCarousel(smooth = true) {
-        const cardWidth = getCardWidth();
-        // Offset: Shift by clones (cardsPerView) + currentIndex
-        const offset = -(currentIndex + cardsPerView) * cardWidth;
-
-        valuesCarousel.style.transition = smooth ? 'transform 0.5s ease-in-out' : 'none';
-        valuesCarousel.style.transform = `translateX(${offset}px)`;
-
-        // Update dots
-        const actualIndex = ((currentIndex % totalCards) + totalCards) % totalCards;
-        dots.forEach((dot, index) => {
-            dot.classList.toggle('active', index === actualIndex);
+            if (index >= startIndex && index < endIndex) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
         });
 
-        // Always clickable
+        // Update dots
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentPage);
+        });
+
+        // Update button states - Always clickable for circular navigation
         valuesPrev.style.opacity = '1';
         valuesPrev.style.cursor = 'pointer';
         valuesNext.style.opacity = '1';
         valuesNext.style.cursor = 'pointer';
     }
 
-    function goToSlide(index) {
-        currentIndex = index;
+    function goToPage(page) {
+        currentPage = page;
         updateCarousel();
     }
 
-    function nextSlide() {
-        currentIndex++;
-        updateCarousel();
-
-        // Check if we need to reset to beginning (infinite loop - forward)
-        if (currentIndex >= totalCards) {
-            setTimeout(() => {
-                currentIndex = 0;
-                updateCarousel(false);
-            }, 500); // Matches transition duration
+    valuesPrev.addEventListener('click', () => {
+        if (currentPage > 0) {
+            currentPage--;
+        } else {
+            // Circle back to last page
+            currentPage = totalPages - 1;
         }
-    }
-
-    function prevSlide() {
-        currentIndex--;
         updateCarousel();
-
-        // Check if we need to jump to end (infinite loop - backward)
-        if (currentIndex < 0) {
-            setTimeout(() => {
-                currentIndex = totalCards - 1;
-                updateCarousel(false);
-            }, 500); // Matches transition duration
-        }
-    }
-
-    valuesPrev.addEventListener('click', prevSlide);
-    valuesNext.addEventListener('click', nextSlide);
-
-    // Initialize - start with no smooth transition to position correctly
-    // Wait for layout to settle for correct width calculation
-    setTimeout(() => updateCarousel(false), 50);
-
-    // Update on window resize to recalculate widths
-    window.addEventListener('resize', () => {
-        updateCarousel(false);
     });
+
+    valuesNext.addEventListener('click', () => {
+        if (currentPage < totalPages - 1) {
+            currentPage++;
+        } else {
+            // Circle back to first page
+            currentPage = 0;
+        }
+        updateCarousel();
+    });
+
+    // Initialize
+    updateCarousel();
 }
 
