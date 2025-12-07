@@ -435,7 +435,7 @@ textarea {
     border-radius: 50%;
     object-fit: cover;
     box-shadow: var(--shadow-xl);
-    object-position: center 15%;
+    object-position: center 10%;
     /* Centra el rostro mejor */
 }
 
@@ -1760,3 +1760,4 @@ textarea {
         grid-template-columns: 1fr;
     }
 }
+
