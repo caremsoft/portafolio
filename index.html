@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Portafolio profesional de Carlos Eduardo Mayorga - Ingeniero de Sistemas especializado en desarrollo de aplicaciones de base de datos con 25 años de experiencia">
+    <meta name="keywords"
+        content="ingeniero de sistemas, desarrollo bases de datos, SQL, programación, portafolio, Carlos Mayorga, Oracle">
+    <meta name="author" content="Carlos Eduardo Mayorga">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Carlos Eduardo Mayorga - Ingeniero de Sistemas">
+    <meta property="og:description"
+        content="Portafolio profesional - 25 años de experiencia en desarrollo de aplicaciones de base de datos">
+    <meta property="og:type" content="website">
+
+    <title>Carlos Eduardo Mayorga - Ingeniero de Sistemas</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Header & Navigation -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">
+                <span class="logo-text">CARLOS<span class="accent">.</span>MAYORGA</span>
+            </a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link active-link">Inicio</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#about" class="nav__link">Sobre Mí</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#experience" class="nav__link">Experiencia</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#skills" class="nav__link">Habilidades</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#projects" class="nav__link">Proyectos</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#contact" class="nav__link">Contacto</a>
+                    </li>
+                </ul>
+
+                <div class="nav__close" id="nav-close">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+
+            <div class="nav__actions">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <!-- Hero Section -->
+        <section class="hero section" id="home">
+            <div class="hero__container container">
+                <div class="hero__content">
+                    <div class="hero__text">
+                        <span class="hero__greeting">Hola, soy</span>
+                        <h1 class="hero__name">Carlos Eduardo Mayorga</h1>
+                        <h2 class="hero__title">
+                            <span class="typed-text">Ingeniero de Sistemas</span>
+                        </h2>
+                        <p class="hero__description">
+                            Especializado en desarrollo de aplicaciones de base de datos con 25 años de experiencia.
+                            Experto en diseñar soluciones robustas, escalables y eficientes para el manejo de
+                            información empresarial.
+                        </p>
+
+                        <div class="hero__buttons">
+                            <a href="#contact" class="btn btn--primary">
+                                <i class="fas fa-envelope"></i>
+                                Contáctame
+                            </a>
+                            <a href="#" class="btn btn--secondary" download>
+                                <i class="fas fa-download"></i>
+                                Descargar CV
+                            </a>
+                        </div>
+
+                        <div class="hero__social">
+                            <a href="https://github.com/tu-usuario" target="_blank" class="social-link"
+                                aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://linkedin.com/in/tu-usuario" target="_blank" class="social-link"
+                                aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="mailto:tu.email@ejemplo.com" class="social-link" aria-label="Email">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="hero__image">
+                        <div class="hero__blob">
+                            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="url(#gradient)"
+                                    d="M47.1,-57.1C59.9,-45.8,68.7,-29.3,71.4,-12.1C74.1,5.1,70.6,23,61.1,37.9C51.6,52.8,36.1,64.7,18.5,70.1C0.9,75.5,-18.8,74.4,-35.7,67.8C-52.6,61.2,-66.7,49.1,-73.2,33.8C-79.7,18.5,-78.6,0,-72.8,-16.1C-67,-32.2,-56.5,-46,-43.1,-57C-29.7,-68,-14.8,-76.2,1.5,-78C17.8,-79.8,34.3,-68.4,47.1,-57.1Z"
+                                    transform="translate(100 100)" />
+                                <defs>
+                                    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:var(--primary);stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:var(--secondary);stop-opacity:1" />
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                            <img src="assets/images/profile.jpg" alt="Carlos Eduardo Mayorga" class="hero__img">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="scroll-down">
+                    <a href="#about" class="scroll-link">
+                        <div class="mouse"></div>
+                        <span>Scroll</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about section" id="about">
+            <div class="container">
+                <div class="section__header">
+                    <span class="section__subtitle">Conóceme</span>
+                    <h2 class="section__title">Sobre Mí</h2>
+                </div>
+
+                <div class="about__container">
+                    <div class="about__content">
+                        <h3 class="about__subtitle">Ingeniero de Sistemas con 25 años de experiencia en Bases de Datos
+                        </h3>
+                        <p class="about__description">
+                            He trabajado en reconocidas empresas de desarrollo de software donde he colaborado en la
+                            elaboración y mantenimiento de robustas aplicaciones empresariales de base de datos. Mi
+                            experiencia abarca el diseño de arquitecturas de datos sólidas, optimización de consultas
+                            complejas y garantía de integridad de la información.
+                        </p>
+                        <p class="about__description">
+                            Me especializo en sistemas gestores de bases de datos relacionales, especialmente Oracle.
+                            Mis conocimientos se encuentran respaldados por certificaciones internacionales de Oracle
+                            Corp. Además, he compartido mi experiencia como instructor de cursos oficiales de Oracle y
+                            como docente de diplomados en prestigiosas instituciones educativas.
+                        </p>
+
+                        <div class="about__info">
+                            <div class="about__box">
+                                <i class="fas fa-award about__icon"></i>
+                                <div>
+                                    <h3 class="about__box-title">25+</h3>
+                                    <span class="about__box-subtitle">Años de Experiencia</span>
+                                </div>
+                            </div>
+                            <div class="about__box">
+                                <i class="fas fa-project-diagram about__icon"></i>
+                                <div>
+                                    <h3 class="about__box-title">100+</h3>
+                                    <span class="about__box-subtitle">Proyectos Completados</span>
+                                </div>
+                            </div>
+                            <div class="about__box">
+                                <i class="fas fa-certificate about__icon"></i>
+                                <div>
+                                    <h3 class="about__box-title">10+</h3>
+                                    <span class="about__box-subtitle">Certificaciones Oracle</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about__values">
+                        <h3 class="values__title">Mis Valores Profesionales</h3>
+                        <div class="values__grid">
+                            <div class="value__card">
+                                <i class="fas fa-database value__icon"></i>
+                                <h4>Integridad de Datos</h4>
+                                <p>Garantizo la precisión y consistencia de la información</p>
+                            </div>
+                            <div class="value__card">
+                                <i class="fas fa-tachometer-alt value__icon"></i>
+                                <h4>Optimización</h4>
+                                <p>Diseño soluciones eficientes y de alto rendimiento</p>
+                            </div>
+                            <div class="value__card">
+                                <i class="fas fa-chalkboard-teacher value__icon"></i>
+                                <h4>Docencia</h4>
+                                <p>Transferencia de conocimiento y formación profesional</p>
+                            </div>
+                            <div class="value__card">
+                                <i class="fas fa-certificate value__icon"></i>
+                                <h4>Certificación Oracle</h4>
+                                <p>Respaldado por certificaciones internacionales</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section class="experience section" id="experience">
+            <div class="container">
+                <div class="section__header">
+                    <span class="section__subtitle">Mi Trayectoria</span>
+                    <h2 class="section__title">Experiencia Profesional</h2>
+                </div>
+
+                <div class="timeline">
+                    <!-- Teaching Experience -->
+                    <div class="timeline__item" data-aos="fade-up">
+                        <div class="timeline__marker"></div>
+                        <div class="timeline__content">
+                            <span class="timeline__date">
+                                <i class="fas fa-calendar"></i>
+                                Experiencia Docente
+                            </span>
+                            <h3 class="timeline__title">Instructor y Docente</h3>
+                            <h4 class="timeline__company">Varias Instituciones</h4>
+                            <p class="timeline__description">
+                                Instructor de cursos oficiales de Oracle. Docente de diplomados en Universidad Piloto
+                                de Colombia y Fundación de Egresados de la Universidad Distrital. Instructor en
+                                Asesoftware SAS compartiendo conocimiento especializado en bases de datos.
+                            </p>
+                            <div class="timeline__tags">
+                                <span class="tag">Oracle</span>
+                                <span class="tag">Capacitación</span>
+                                <span class="tag">Docencia</span>
+                                <span class="tag">Diplomados</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Professional Experience -->
+                    <div class="timeline__item" data-aos="fade-up">
+                        <div class="timeline__marker"></div>
+                        <div class="timeline__content">
+                            <span class="timeline__date">
+                                <i class="fas fa-calendar"></i>
+                                25 años de trayectoria
+                            </span>
+                            <h3 class="timeline__title">Desarrollador de Aplicaciones de Base de Datos</h3>
+                            <h4 class="timeline__company">Empresas de Desarrollo de Software</h4>
+                            <p class="timeline__description">
+                                He colaborado en reconocidas empresas de desarrollo de software en la elaboración y
+                                mantenimiento de robustas aplicaciones empresariales de base de datos. Especializado en
+                                diseño de arquitecturas, optimización de consultas y garantía de integridad de datos.
+                            </p>
+                            <div class="timeline__tags">
+                                <span class="tag">Oracle</span>
+                                <span class="tag">SQL Server</span>
+                                <span class="tag">PL/SQL</span>
+                                <span class="tag">T-SQL</span>
+                                <span class="tag">PostgreSQL</span>
+                                <span class="tag">MySQL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section class="education section">
+            <div class="container">
+                <div class="section__header">
+                    <span class="section__subtitle">Formación Académica</span>
+                    <h2 class="section__title">Educación</h2>
+                </div>
+
+                <div class="education__grid">
+                    <div class="education__card" data-aos="fade-up">
+                        <div class="education__icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3 class="education__title">Ingeniería de Sistemas</h3>
+                        <h4 class="education__institution">Universidad</h4>
+                        <span class="education__date">1995 - 2000</span>
+                        <p class="education__description">
+                            Grado universitario con énfasis en desarrollo de software y arquitectura de sistemas.
+                        </p>
+                    </div>
+
+                    <div class="education__card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="education__icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <h3 class="education__title">Especialización en Bases de Datos</h3>
+                        <h4 class="education__institution">Institución Técnica</h4>
+                        <span class="education__date">2005</span>
+                        <p class="education__description">
+                            Programa intensivo enfocado en administración y optimización de bases de datos
+                            empresariales Oracle.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section class="certifications section">
+            <div class="container">
+                <div class="section__header">
+                    <span class="section__subtitle">Validación de Conocimientos</span>
+                    <h2 class="section__title">Certificaciones</h2>
+                </div>
+
+                <div class="certifications__grid">
+                    <div class="certification__card" data-aos="zoom-in">
+                        <div class="certification__badge">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <h3 class="certification__title">Oracle Database SQL Certified Associate</h3>
+                        <p class="certification__issuer">Oracle Corporation</p>
+                        <span class="certification__date">Certificación Internacional</span>
+                        <span class="certification__validity">Oracle Corp</span>
+                    </div>
+
+                    <div class="certification__card" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="certification__badge">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <h3 class="certification__title">Oracle PL/SQL Developer Certified Professional</h3>
+                        <p class="certification__issuer">Oracle Corporation</p>
+                        <span class="certification__date">Certificación Internacional</span>
+                        <span class="certification__validity">Oracle Corp</span>
+                    </div>
+
+                    <div class="certification__card" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="certification__badge">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <h3 class="certification__title">Oracle Database Administrator Certified</h3>
+                        <p class="certification__issuer">Oracle Corporation</p>
+                        <span class="certification__date">Certificación Internacional</span>
+                        <span class="certification__validity">Oracle Corp</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="skills section" id="skills">
+            <div class="container">
+                <div class="section__header">
+                    <span class="section__subtitle">Mis Capacidades</span>
+                    <h2 class="section__title">Habilidades Técnicas</h2>
+                </div>
+
+                <div class="skills__container">
+                    <!-- Database Skills -->
+                    <div class="skills__category" data-aos="fade-right">
+                        <h3 class="skills__category-title">
+                            <i class="fas fa-database"></i>
+                            Bases de Datos Relacionales
+                        </h3>
+                        <div class="skills__list">
+                            <div class="skill">
+                                <div class="skill__header">
+                                    <span class="skill__name">Oracle Database</span>
+                                    <span class="skill__percentage">95%</span>
+                                </div>
+                                <div class="skill__bar">
+                                    <div class="skill__progress" style="width: 95%"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill">
+                                <div class="skill__header">
+                                    <span class="skill__name">SQL Server</span>
+                                    <span class="skill__percentage">92%</span>
+                                </div>
+                                <div class="skill__bar">
+                                    <div class="skill__progress" style="width: 92%"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill">
+                                <div class="skill__header">
+                                    <span class="skill__name">PostgreSQL</span>
+                                    <span class="skill__percentage">88%</span>
+                                </div>
+                                <div class="skill__bar">
+                                    <div class="skill__progress" style="width: 88%"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill">
+                                <div class="skill__header">
+                                    <span class="skill__name">MySQL</span>
+                                    <span class="skill__percentage">90%</span>
+                                </div>
+                                <div class="skill__bar">
+                                    <div class="skill__progress" style="width: 90%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Programming & Tools -->
+                    <div class="skills__category" data-aos="fade-left" data-aos-delay="100">
+                        <h3 class="skills__category-title">
+                            <i class="fas fa-code"></i>
+                            Programación & Herramientas
+                        </h3>
+                        <div class="skills__list">
+                            <div class="skill">
+                                <div class="skill__header">
+                                    <span class="skill__name">PL/SQL</span>
+                                    <span class="skill__percentage">95%</span>
+                                </div>
+                                <div class="skill__bar">
+                                    <div class="skill__progress" style="width: 95%"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill">
+                                <div class="skill__header">
+                                    <span class="skill__name">T-SQL</span>
+                                    <span class="skill__percentage">92%</span>
+                                </div>
+                                <div class="skill__bar">
+                                    <div class="skill__progress" style="width: 92%"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill">
+                                <div class="skill__header">
+                                    <span class="skill__name">Python</span>
+                                    <span class="skill__percentage">80%</span>
+                                </div>
+                                <div class="skill__bar">
+                                    <div class="skill__progress" style="width: 80%"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill">
+                                <div class="skill__header">
+                                    <span class="skill__name">ETL - SSIS, Talend</span>
+                                    <span class="skill__percentage">88%</span>
+                                </div>
+                                <div class="skill__bar">
+                                    <div class="skill__progress" style="width: 88%"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill">
+                                <div class="skill__header">
+                                    <span class="skill__name">Git / Azure DevOps</span>
+                                    <span class="skill__percentage">78%</span>
+                                </div>
+                                <div class="skill__bar">
+                                    <div class="skill__progress" style="width: 78%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Soft Skills -->
+                    <div class="skills__category" data-aos="fade-right" data-aos-delay="200">
+                        <h3 class="skills__category-title">
+                            <i class="fas fa-users"></i>
+                            Habilidades Blandas
+                        </h3>
+                        <div class="skills__tags">
+                            <span class="skill__tag">Liderazgo Técnico</span>
+                            <span class="skill__tag">Resolución de Problemas</span>
+                            <span class="skill__tag">Comunicación Efectiva</span>
+                            <span class="skill__tag">Docencia</span>
+                            <span class="skill__tag">Mentoría</span>
+                            <span class="skill__tag">Gestión de Proyectos</span>
+                            <span class="skill__tag">Documentación Técnica</span>
+                            <span class="skill__tag">Trabajo en Equipo</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="projects section" id="projects">
+            <div class="container">
+                <div class="section__header">
+                    <span class="section__subtitle">Mi Trabajo</span>
+                    <h2 class="section__title">Proyectos Destacados</h2>
+                </div>
+
+                <div class="projects__grid">
+                    <div class="project__card" data-aos="zoom-in">
+                        <div class="project__image">
+                            <img src="assets/images/project-1.jpg" alt="Proyecto 1">
+                        </div>
+                        <div class="project__content">
+                            <h3 class="project__title">Sistema de Gestión Empresarial</h3>
+                            <p class="project__description">
+                                Desarrollo de sistema integral de gestión empresarial con Oracle Database, incluyendo
+                                módulos de finanzas, inventario y recursos humanos.
+                            </p>
+                            <div class="project__tags">
+                                <span class="tag">Oracle</span>
+                                <span class="tag">PL/SQL</span>
+                                <span class="tag">Forms & Reports</span>
+                            </div>
+                            <div class="project__links">
+                                <a href="#" class="project__link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    Ver detalles
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project__card" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="project__image">
+                            <img src="assets/images/project-2.jpg" alt="Proyecto 2">
+                        </div>
+                        <div class="project__content">
+                            <h3 class="project__title">Data Warehouse Corporativo</h3>
+                            <p class="project__description">
+                                Diseño e implementación de Data Warehouse para análisis empresarial, con procesos ETL
+                                automatizados y reportes en tiempo real.
+                            </p>
+                            <div class="project__tags">
+                                <span class="tag">Oracle</span>
+                                <span class="tag">ETL</span>
+                                <span class="tag">Talend</span>
+                                <span class="tag">Power BI</span>
+                            </div>
+                            <div class="project__links">
+                                <a href="#" class="project__link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    Ver detalles
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project__card" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="project__image">
+                            <img src="assets/images/project-3.jpg" alt="Proyecto 3">
+                        </div>
+                        <div class="project__content">
+                            <h3 class="project__title">Migración de Bases de Datos</h3>
+                            <p class="project__description">
+                                Migración exitosa de sistemas legacy a PostgreSQL, asegurando integridad de datos y
+                                minimizando downtime durante la transición.
+                            </p>
+                            <div class="project__tags">
+                                <span class="tag">PostgreSQL</span>
+                                <span class="tag">Python</span>
+                                <span class="tag">AWS RDS</span>
+                            </div>
+                            <div class="project__links">
+                                <a href="#" class="project__link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    Ver detalles
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Courses Section -->
+        <section class="courses section">
+            <div class="container">
+                <div class="section__header">
+                    <span class="section__subtitle">Aprendizaje Continuo</span>
+                    <h2 class="section__title">Cursos y Formación</h2>
+                </div>
+
+                <div class="courses__grid">
+                    <div class="course__card" data-aos="fade-up">
+                        <div class="course__header">
+                            <i class="fas fa-database course__icon"></i>
+                            <span class="course__platform">Oracle University</span>
+                        </div>
+                        <h3 class="course__title">Advanced PL/SQL Programming</h3>
+                        <p class="course__instructor">Por Oracle Instructors</p>
+                        <span class="course__date">Completado: 2023</span>
+                        <div class="course__tags">
+                            <span class="tag">Oracle</span>
+                            <span class="tag">PL/SQL</span>
+                        </div>
+                    </div>
+
+                    <div class="course__card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="course__header">
+                            <i class="fas fa-server course__icon"></i>
+                            <span class="course__platform">Oracle University</span>
+                        </div>
+                        <h3 class="course__title">Oracle Database Administration</h3>
+                        <p class="course__instructor">Por Oracle Experts</p>
+                        <span class="course__date">Completado: 2022</span>
+                        <div class="course__tags">
+                            <span class="tag">DBA</span>
+                            <span class="tag">Administración</span>
+                        </div>
+                    </div>
+
+                    <div class="course__card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="course__header">
+                            <i class="fas fa-chart-line course__icon"></i>
+                            <span class="course__platform">Microsoft</span>
+                        </div>
+                        <h3 class="course__title">Performance Tuning SQL Queries</h3>
+                        <p class="course__instructor">Por Microsoft Learn</p>
+                        <span class="course__date">Completado: 2023</span>
+                        <div class="course__tags">
+                            <span class="tag">Optimización</span>
+                            <span class="tag">SQL</span>
+                        </div>
+                    </div>
+
+                    <div class="course__card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="course__header">
+                            <i class="fas fa-project-diagram course__icon"></i>
+                            <span class="course__platform">Pluralsight</span>
+                        </div>
+                        <h3 class="course__title">Data Warehousing Fundamentals</h3>
+                        <p class="course__instructor">Por Pluralsight Authors</p>
+                        <span class="course__date">Completado: Noviembre 2022</span>
+                        <div class="course__tags">
+                            <span class="tag">Data Warehouse</span>
+                            <span class="tag">ETL</span>
+                        </div>
+                    </div>
+
+                    <div class="course__card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="course__header">
+                            <i class="fas fa-code course__icon"></i>
+                            <span class="course__platform">LinkedIn Learning</span>
+                        </div>
+                        <h3 class="course__title">Python for Data Engineering</h3>
+                        <p class="course__instructor">Por Robin Andrew</p>
+                        <span class="course__date">Completado: Septiembre 2022</span>
+                        <div class="course__tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Data Engineering</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Section -->
+        <section class="blog section">
+            <div class="container">
+                <div class="section__header">
+                    <span class="section__subtitle">Blog Técnico</span>
+                    <h2 class="section__title">Artículos Recientes</h2>
+                </div>
+
+                <div class="blog__grid">
+                    <article class="blog__card" data-aos="fade-up">
+                        <div class="blog__image">
+                            <img src="assets/images/blog-1.jpg" alt="Blog post 1">
+                            <span class="blog__category">Bases de Datos</span>
+                        </div>
+                        <div class="blog__content">
+                            <span class="blog__date">15 Nov 2024</span>
+                            <h3 class="blog__title">
+                                <a href="#">Optimización de Consultas Oracle: Guía Completa</a>
+                            </h3>
+                            <p class="blog__excerpt">
+                                Descubre las mejores prácticas para optimizar tus consultas Oracle PL/SQL
+                                y mejorar el rendimiento de tus bases de datos...
+                            </p>
+                            <a href="#" class="blog__link">
+                                Leer más <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="blog__card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="blog__image">
+                            <img src="assets/images/blog-2.jpg" alt="Blog post 2">
+                            <span class="blog__category">Arquitectura</span>
+                        </div>
+                        <div class="blog__content">
+                            <span class="blog__date">02 Nov 2024</span>
+                            <h3 class="blog__title">
+                                <a href="#">Diseño de Data Warehouse: Pasos Fundamentales</a>
+                            </h3>
+                            <p class="blog__excerpt">
+                                Aprende cómo diseñar un Data Warehouse efectivo desde cero,
+                                incluyendo modelado dimensional y estrategias ETL...
+                            </p>
+                            <a href="#" class="blog__link">
+                                Leer más <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="blog__card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="blog__image">
+                            <img src="assets/images/blog-3.jpg" alt="Blog post 3">
+                            <span class="blog__category">Best Practices</span>
+                        </div>
+                        <div class="blog__content">
+                            <span class="blog__date">20 Oct 2024</span>
+                            <h3 class="blog__title">
+                                <a href="#">Mejores Prácticas en Administración Oracle</a>
+                            </h3>
+                            <p class="blog__excerpt">
+                                Guía completa de las mejores prácticas para administrar bases de datos Oracle,
+                                basada en 25 años de experiencia...
+                            </p>
+                            <a href="#" class="blog__link">
+                                Leer más <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials section">
+            <div class="container">
+                <div class="section__header">
+                    <span class="section__subtitle">Recomendaciones</span>
+                    <h2 class="section__title">Testimonios</h2>
+                </div>
+
+                <div class="testimonials__container">
+                    <div class="testimonial__card" data-aos="zoom-in">
+                        <div class="testimonial__quote">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="testimonial__text">
+                            "Excelente profesional con gran capacidad técnica y habilidades de liderazgo.
+                            Su contribución al equipo fue fundamental para el éxito del proyecto."
+                        </p>
+                        <div class="testimonial__author">
+                            <img src="assets/images/testimonial-1.jpg" alt="Testimonio 1" class="testimonial__img">
+                            <div class="testimonial__info">
+                                <h4 class="testimonial__name">John Doe</h4>
+                                <span class="testimonial__position">CTO en Tech Company</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial__card" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="testimonial__quote">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="testimonial__text">
+                            "Trabajar con Carlos fue una experiencia increíble. Su conocimiento
+                            en bases de datos Oracle y atención al detalle superaron nuestras expectativas."
+                        </p>
+                        <div class="testimonial__author">
+                            <img src="assets/images/testimonial-2.jpg" alt="Testimonio 2" class="testimonial__img">
+                            <div class="testimonial__info">
+                                <h4 class="testimonial__name">Jane Smith</h4>
+                                <span class="testimonial__position">Product Manager en StartupXYZ</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial__card" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="testimonial__quote">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="testimonial__text">
+                            "Un experto excepcional en bases de datos que siempre busca la excelencia. Su capacidad
+                            para optimizar queries complejos y su dedicación a la docencia son impresionantes."
+                        </p>
+                        <div class="testimonial__author">
+                            <img src="assets/images/testimonial-3.jpg" alt="Testimonio 3" class="testimonial__img">
+                            <div class="testimonial__info">
+                                <h4 class="testimonial__name">María González</h4>
+                                <span class="testimonial__position">DBA Lead en Innovation Corp</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact section" id="contact">
+            <div class="container">
+                <div class="section__header">
+                    <span class="section__subtitle">Conversemos</span>
+                    <h2 class="section__title">Contacto</h2>
+                </div>
+
+                <div class="contact__container">
+                    <div class="contact__info">
+                        <h3 class="contact__subtitle">¡Trabajemos juntos!</h3>
+                        <p class="contact__description">
+                            Estoy siempre abierto a discutir nuevos proyectos, ideas creativas o
+                            oportunidades para ser parte de tus visiones.
+                        </p>
+
+                        <div class="contact__cards">
+                            <div class="contact__card">
+                                <div class="contact__card-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact__card-info">
+                                    <h4 class="contact__card-title">Email</h4>
+                                    <p class="contact__card-data">tu.email@ejemplo.com</p>
+                                </div>
+                            </div>
+
+                            <div class="contact__card">
+                                <div class="contact__card-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="contact__card-info">
+                                    <h4 class="contact__card-title">Teléfono</h4>
+                                    <p class="contact__card-data">+57 123 456 7890</p>
+                                </div>
+                            </div>
+
+                            <div class="contact__card">
+                                <div class="contact__card-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="contact__card-info">
+                                    <h4 class="contact__card-title">Ubicación</h4>
+                                    <p class="contact__card-data">Bogotá, Colombia</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form class="contact__form" id="contact-form">
+                        <div class="form__group">
+                            <input type="text" name="name" class="form__input" placeholder="Tu nombre" required>
+                        </div>
+
+                        <div class="form__group">
+                            <input type="email" name="email" class="form__input" placeholder="Tu email" required>
+                        </div>
+
+                        <div class="form__group">
+                            <input type="text" name="subject" class="form__input" placeholder="Asunto" required>
+                        </div>
+
+                        <div class="form__group">
+                            <textarea name="message" class="form__input form__textarea" placeholder="Tu mensaje"
+                                rows="6" required></textarea>
+                        </div>
+
+                        <div id="form-message" class="form__message"></div>
+
+                        <button type="submit" class="btn btn--primary btn--full">
+                            <i class="fas fa-paper-plane"></i>
+                            Enviar Mensaje
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__info">
+                    <h3 class="footer__title">CARLOS<span class="accent">.</span>MAYORGA</h3>
+                    <p class="footer__description">
+                        Ingeniero de Sistemas especializado en desarrollo de aplicaciones de base de datos.
+                        25 años de experiencia en Oracle y bases de datos relacionales.
+                    </p>
+                </div>
+
+                <div class="footer__links">
+                    <h4 class="footer__subtitle">Enlaces Rápidos</h4>
+                    <ul class="footer__list">
+                        <li><a href="#about" class="footer__link">Sobre Mí</a></li>
+                        <li><a href="#experience" class="footer__link">Experiencia</a></li>
+                        <li><a href="#skills" class="footer__link">Habilidades</a></li>
+                        <li><a href="#projects" class="footer__link">Proyectos</a></li>
+                        <li><a href="#contact" class="footer__link">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__social">
+                    <h4 class="footer__subtitle">Sígueme</h4>
+                    <div class="footer__social-links">
+                        <a href="https://github.com/tu-usuario" target="_blank" class="social-link" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/tu-usuario" target="_blank" class="social-link"
+                            aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="mailto:tu.email@ejemplo.com" class="social-link" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <p class="footer__copy">
+                    &copy; 2024 Carlos Eduardo Mayorga. Todos los derechos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll Top Button -->
+    <a href="#" class="scroll-top" id="scroll-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <!-- Main JS -->
+    <script src="script.js"></script>
+</body>
+
+</html>
