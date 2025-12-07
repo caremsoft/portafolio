@@ -398,3 +398,77 @@ document.addEventListener('mouseup', () => {
 console.log('%c¡Hola! 👋', 'font-size: 20px; font-weight: bold; color: #6366f1;');
 console.log('%c¿Te gusta inspeccionar el código? ¡Excelente! Hablemos.', 'font-size: 14px; color: #6c757d;');
 console.log('%cGitHub: https://github.com/tu-usuario', 'font-size: 12px; color: #6366f1;');
+
+// ===================================
+// VALUES CAROUSEL
+// ===================================
+const valuesCarousel = document.getElementById('values-carousel');
+const valuesPrev = document.getElementById('values-prev');
+const valuesNext = document.getElementById('values-next');
+const valuesDots = document.getElementById('values-dots');
+
+if (valuesCarousel && valuesPrev && valuesNext) {
+    const cards = valuesCarousel.querySelectorAll('.value__card');
+    const totalCards = cards.length;
+    const cardsPerPage = 4;
+    const totalPages = Math.ceil(totalCards / cardsPerPage);
+    let currentPage = 0;
+
+    // Create dots
+    for (let i = 0; i < totalPages; i++) {
+        const dot = document.createElement('div');
+        dot.classList.add('carousel__dot');
+        if (i === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToPage(i));
+        valuesDots.appendChild(dot);
+    }
+
+    const dots = valuesDots.querySelectorAll('.carousel__dot');
+
+    function updateCarousel() {
+        cards.forEach((card, index) => {
+            const startIndex = currentPage * cardsPerPage;
+            const endIndex = startIndex + cardsPerPage;
+
+            if (index >= startIndex && index < endIndex) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+
+        // Update dots
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentPage);
+        });
+
+        // Update button states
+        valuesPrev.style.opacity = currentPage === 0 ? '0.5' : '1';
+        valuesPrev.style.cursor = currentPage === 0 ? 'not-allowed' : 'pointer';
+        valuesNext.style.opacity = currentPage === totalPages - 1 ? '0.5' : '1';
+        valuesNext.style.cursor = currentPage === totalPages - 1 ? 'not-allowed' : 'pointer';
+    }
+
+    function goToPage(page) {
+        currentPage = page;
+        updateCarousel();
+    }
+
+    valuesPrev.addEventListener('click', () => {
+        if (currentPage > 0) {
+            currentPage--;
+            updateCarousel();
+        }
+    });
+
+    valuesNext.addEventListener('click', () => {
+        if (currentPage < totalPages - 1) {
+            currentPage++;
+            updateCarousel();
+        }
+    });
+
+    // Initialize
+    updateCarousel();
+}
+
