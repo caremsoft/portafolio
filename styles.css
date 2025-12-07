@@ -617,26 +617,13 @@ textarea {
 .values__carousel-container {
     position: relative;
     padding: 0 3rem;
-    overflow: hidden;
 }
 
 .values__carousel {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
-    width: 100%;
-    /* Ensure container takes full width */
-    transition: transform 0.5s ease-in-out;
-}
-
-.values__carousel .value__card {
-    /* 100% is container width. We want 4 cards.
-       3 gaps of 2rem = 6rem total gap space visible.
-       (100% - 6rem) / 4 is width of one card. */
-    flex: 0 0 calc((100% - 6rem) / 4);
-    min-width: 0;
-    /* Reset generic min-width */
-    max-width: calc((100% - 6rem) / 4);
-    /* Prevent expansion */
+    overflow: hidden;
 }
 
 .carousel__button {
