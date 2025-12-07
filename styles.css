@@ -435,6 +435,8 @@ textarea {
     border-radius: 50%;
     object-fit: cover;
     box-shadow: var(--shadow-xl);
+    object-position: center 30%;
+    /* Centra el rostro mejor */
 }
 
 .scroll-down {
