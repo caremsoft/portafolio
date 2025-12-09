@@ -1034,6 +1034,8 @@ textarea {
     overflow: hidden;
     box-shadow: var(--shadow-md);
     transition: all var(--transition-base);
+    display: flex;
+    flex-direction: column;
 }
 
 .project__card:hover {
@@ -1119,6 +1121,9 @@ textarea {
 
 .project__content {
     padding: 2rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .project__title {
