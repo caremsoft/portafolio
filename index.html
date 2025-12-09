@@ -989,18 +989,19 @@
                     <article class="blog__card" data-aos="fade-up">
                         <div class="blog__image">
                             <img src="assets/images/blog-1.jpg" alt="Blog post 1">
-                            <span class="blog__category">Bases de Datos</span>
+                            <span class="blog__category">Oracle PL/SQL</span>
                         </div>
                         <div class="blog__content">
-                            <span class="blog__date">15 Nov 2024</span>
+                            <span class="blog__date">8 Dic 2025</span>
                             <h3 class="blog__title">
-                                <a href="#">Optimización de Consultas Oracle: Guía Completa</a>
+                                <a href="#">Manejo de Excepciones Oracle PL/SQL</a>
                             </h3>
                             <p class="blog__excerpt">
-                                Descubre las mejores prácticas para optimizar tus consultas Oracle PL/SQL
-                                y mejorar el rendimiento de tus bases de datos...
+                                El manejo de excepciones es fundamental para crear programas robustos y confiables.
+                                Aprende la importancia de tener un manejo adecuado para tener aplicaciones robustas y
+                                escalables.
                             </p>
-                            <a href="#" class="blog__link">
+                            <a onclick=openBlogModal(1) class="blog__link">
                                 Leer más <i class="fas fa-arrow-right"></i>
                             </a>
                         </div>
@@ -1217,11 +1218,22 @@
         <i class="fas fa-arrow-up"></i>
     </a>
 
+    <!-- Modal Blog Article -->
+    <div id="blog-modal" class="blog-modal">
+        <div class="blog-modal__content">
+            <button class="blog-modal__close" id="close-modal">&times;</button>
+            <div class="blog-modal__body" id="modal-body">
+                <!-- El contenido se inyectará aquí -->
+            </div>
+        </div>
+    </div>
+
     <!-- AOS -->
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
     <!-- Main JS -->
     <script src="script.js"></script>
+
 </body>
 
 </html>

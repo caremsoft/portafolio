@@ -478,3 +478,167 @@ if (valuesCarousel && valuesPrev && valuesNext) {
     updateCarousel();
 }
 
+// Blog Modal Functionality
+const blogModal = document.getElementById('blog-modal');
+const closeModal = document.getElementById('close-modal');
+const modalBody = document.getElementById('modal-body');
+
+// Blog Article Content
+const blogArticles = {
+    1: {
+        title: 'Manejo de Excepciones Oracle PL/SQL',
+        content: `
+<h2>Manejo de Excepciones Oracle PL/SQL</h2>
+
+<p><strong>Un programa robusto no es aquel que no falla, sino aquel que controla adecuadamente sus excepciones.</strong> Una excepción es el resultado de una ejecución anormal del programa, una condición que no debería darse, que esperamos que no ocurra o un imprevisto no contemplado.</p>
+
+<p>Puede parecer bastante obvio el uso de las excepciones y la teoría correspondiente. Pero si bien la explicación inicia con lo básico que debemos conocer todos, en la parte final se explica el funcionamiento que puede ocasionar problemas en los programas, por el no entendimiento de la teoría básica y la mala utilización del manejo de excepciones.</p>
+
+<h3>Tipos de Excepciones en Oracle</h3>
+
+<p>Existen dos tipos de excepciones en Oracle:</p>
+
+<ul>
+  <li>Excepciones pre-definidas en el sistema</li>
+  <li>Excepciones definidas por el usuario</li>
+</ul>
+
+<h3>Excepciones Pre-definidas en el Sistema</h3>
+
+<p>Son aquellas definidas y presentes implícitamente en el servidor de Oracle. Se encuentran definidas en el paquete "STANDARD" de Oracle el cual contiene la definición de todas las funciones básicas del motor (Funciones de una sola fila, procesamiento de transacciones, definición de tipos de datos, entre otros).</p>
+
+<p>Las excepciones pre-definidas más ampliamente utilizadas son:</p>
+
+<ul>
+  <li>de>ORA-00001 DUP_VAL_ON_INDEX</code></li>
+  <li>de>ORA-01403 NO_DATA_FOUND</code></li>
+  <li>de>ORA-01422 TOO_MANY_ROWS</code></li>
+  <li>de>ORA-01476 ZERO_DIVIDE</code></li>
+</ul>
+
+<h3>Ejemplo de Manejo de Excepciones Pre-definidas</h3>
+
+<p>Como ejemplo se va a asumir que existe una tabla que posee los valores de los salarios mínimos mensuales por cada año. Un campo es de>ANIO</code> numérico de cuatro posiciones que posee el valor del año, y un campo de>SALARIO</code> numérico de ocho posiciones que posee el valor del salario mínimo mensual.</p>
+
+<p>El siguiente programa muestra el valor del salario mínimo para el año 2014:</p>
+
+<pre style="background-color: #f5f5f5; padding: 15px; border-radius: 5px; overflow-x: auto;">de>DECLARE
+  v_salario_minimo minimos_anuales.salario%type;
+BEGIN
+  SELECT salario
+  INTO v_salario_minimo
+  FROM minimos_anuales
+  WHERE anio = 2014;
+  DBMS_OUTPUT.PUT_LINE('EL VALOR DEL SALARIO MINIMO PARA 2014 ES '||v_salario_minimo);
+EXCEPTION
+  WHEN NO_DATA_FOUND THEN
+    DBMS_OUTPUT.PUT_LINE('NO ESTA DEFINIDO EL SALARIO MINIMO PARA EL AÑO 2014');
+  WHEN TOO_MANY_ROWS THEN
+    DBMS_OUTPUT.PUT_LINE('SE ENCUENTRA DEFINIDO EL SALARIO MINIMO PARA EL AÑO 2014 MAS DE UNA VEZ');
+END;</code></pre>
+
+<h3>Excepciones Definidas por el Usuario</h3>
+
+<p>Algunas veces los programas deben manejar errores propios de la lógica del negocio, estandarizar mensajes entre aplicaciones, definir el resultado de invocación a interfaces, en fin, personalizar mensajes del negocio.</p>
+
+<p>Oracle permite definir excepciones, tanto códigos como mensajes de error, para manejar de forma personalizada las excepciones. El código del ejemplo anterior podría ser re-definido de la siguiente manera:</p>
+
+<pre style="background-color: #f5f5f5; padding: 15px; border-radius: 5px; overflow-x: auto;">de>DECLARE
+  v_salario_minimo minimos_anuales.salario%type;
+  v_cantidad NUMBER(2);
+  NO_SALARIO EXCEPTION;
+  MUCHOS_SALARIOS EXCEPTION;
+BEGIN
+  SELECT COUNT(*)
+  INTO    v_cantidad
+  FROM minimos_anuales
+  WHERE anio = 2014;
+  IF v_cantidad = 1 THEN
+    SELECT salario
+    INTO v_salario_minimo
+    FROM minimos_anuales
+    WHERE anio = 2014;
+    DBMS_OUTPUT.PUT_LINE('EL VALOR DEL SALARIO MINIMO PARA 2014 ES '||v_salario_minimo);
+  ELSIF v_cantidad = 0 THEN
+    RAISE NO_SALARIO;
+  ELSE
+    RAISE MUCHOS_SALARIOS;
+  END IF;
+EXCEPTION
+  WHEN NO_SALARIO THEN
+    DBMS_OUTPUT.PUT_LINE('NO ESTA DEFINIDO EL SALARIO MINIMO PARA EL AÑO 2014');
+  WHEN MUCHOS_SALARIOS THEN
+    DBMS_OUTPUT.PUT_LINE('SE ENCUENTRA DEFINIDO EL SALARIO MINIMO PARA EL AÑO 2014 MAS DE UNA VEZ');
+END;</code></pre>
+
+<h3>Procedimiento RAISE_APPLICATION_ERROR</h3>
+
+<p>Existe el procedimiento de>RAISE_APPLICATION_ERROR</code>, el cual permite generar excepciones sin definirlas y dispararlas como en el ejemplo anterior. La sintaxis del procedimiento es la siguiente:</p>
+
+<p>de>RAISE_APPLICATION_ERROR(numero,mensaje);</code></p>
+
+<p>El número corresponde a un valor entero entre -20000 y -20999 y el mensaje corresponde a lo que se desea mostrar.</p>
+
+<pre style="background-color: #f5f5f5; padding: 15px; border-radius: 5px; overflow-x: auto;">de>DECLARE
+  v_salario_minimo minimos_anuales.salario%type;
+  v_cantidad NUMBER(2);
+BEGIN
+  SELECT COUNT(*)
+  INTO    v_cantidad
+  FROM minimos_anuales
+  WHERE anio = 2014;
+  IF v_cantidad = 1 THEN
+    SELECT salario
+    INTO v_salario_minimo
+    FROM minimos_anuales
+    WHERE anio = 2014;
+    DBMS_OUTPUT.PUT_LINE('EL VALOR DEL SALARIO MINIMO PARA 2014 ES '||v_salario_minimo);
+  ELSIF v_cantidad = 0 THEN
+    RAISE_APPLICATION_ERROR(-20000,'NO ESTA DEFINIDO EL SALARIO MINIMO PARA EL AÑO 2014');
+  ELSE
+    RAISE_APPLICATION_ERROR(-20001, 'SE ENCUENTRA DEFINIDO EL SALARIO MINIMO PARA EL AÑO 2014 MAS DE UNA VEZ');  
+  END IF;
+EXCEPTION
+  WHEN OTHERS THEN
+    DBMS_OUTPUT.PUT_LINE(SQLERRM);
+END;</code></pre>
+
+<h3>Funciones Útiles para el Manejo de Excepciones</h3>
+
+<ul>
+  <li>de>SQLCODE</code>: Recupera el código del último error presentado</li>
+  <li>de>SQLERRM</code>: Recupera el código y mensaje del último error presentado</li>
+</ul>
+
+<h3>Propagación de las Excepciones</h3>
+
+<p>Dada la estructura de bloques de PL/SQL, las excepciones se propagan desde el bloque más interno, hasta el bloque más externo buscando ser manejadas. Esta es la razón por la cual <strong>no se puede decir que un buen programa es aquel que no falla</strong>, ni presenta excepciones.</p>
+
+<p>Es preferible que aparezca un de>NO_DATA_FOUND</code> en la línea X del programa a que el programa no muestre mensajes de error pero no haga lo que se espera. Cuando se trabaja modularmente, se debe definir los errores que se pueden presentar y la manera en que estos son tratados al interior del programa y propagados hacia el exterior.</p>
+
+<h3>Conclusión</h3>
+
+<p>El manejo adecuado de excepciones es fundamental para crear programas robustos y confiables. No se trata de evitar que los errores ocurran, sino de anticiparlos y controlarlos de manera efectiva para garantizar que la aplicación se comporte de forma predecible y segura en todas las circunstancias.</p>
+        `
+    }
+};
+
+// Open modal with article
+function openBlogModal(articleId) {
+    if (blogArticles[articleId]) {
+        modalBody.innerHTML = blogArticles[articleId].content;
+        blogModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+// Close modal
+closeModal.addEventListener('click', closeBlogModal);
+window.addEventListener('click', (e) => {
+    if (e.target === blogModal) closeBlogModal();
+});
+
+function closeBlogModal() {
+    blogModal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+}
