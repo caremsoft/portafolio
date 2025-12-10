@@ -1755,6 +1755,12 @@ textarea {
         padding: 4rem 2rem;
         box-shadow: var(--shadow-xl);
         transition: right var(--transition-base);
+        
+ .about__subtitle,
+ .about__description {
+  max-width: 100%;
+  word-wrap: break-word;
+ }
     }
 
     .nav__menu.show-menu {
@@ -1797,6 +1803,7 @@ textarea {
     .hero__blob {
         width: 280px;
         height: 280px;
+         margin: 0 auto;
     }
 
     .hero__img {
@@ -2012,4 +2019,60 @@ body {
   max-width: 100%;
   word-wrap: break-word;
   overflow-wrap: break-word;
+}
+
+/* ===================================
+ MOBILE RESPONSIVE (480px and below)
+ =================================== */
+@media screen and (max-width: 480px) {
+ .hero__blob {
+  width: 180px;
+  height: 180px;
+  margin: 0 auto;
+ }
+ 
+ .hero__img {
+  width: 140px;
+  height: 140px;
+ }
+ 
+ .hero__content {
+  gap: 2rem;
+ }
+ 
+ .about__subtitle,
+ .about__description {
+  max-width: 100%;
+  word-break: break-word;
+ }
+ 
+ .about__info {
+  grid-template-columns: 1fr;
+ }
+ 
+ .values__carousel-container {
+  padding: 0 2rem;
+ }
+ 
+ .values__carousel {
+  grid-template-columns: 1fr;
+ }
+ 
+ .carousel__button {
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1rem;
+ }
+ 
+ .section__title {
+  font-size: 1.5rem;
+ }
+ 
+ .skills__container {
+  grid-template-columns: 1fr;
+ }
+ 
+ .projects__grid {
+  grid-template-columns: 1fr;
+ }
 }
