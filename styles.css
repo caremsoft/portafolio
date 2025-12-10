@@ -1978,3 +1978,38 @@ textarea {
         max-height: calc(100vh - 40px);
     }
 }
+
+
+/* Fix responsive overflow issues */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.hero {
+  overflow-x: hidden !important;
+}
+
+.hero__blob {
+  max-width: min(400px, 80vw) !important;
+  max-height: min(400px, 80vw) !important;
+}
+
+.hero__image {
+  max-width: 100%;
+  overflow: hidden !important;
+}
+
+.section {
+  overflow-x: hidden;
+}
+
+.about__subtitle,
+.about__description {
+  max-width: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
