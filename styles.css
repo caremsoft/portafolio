@@ -1826,7 +1826,8 @@ textarea {
     }
 }
 
-@media screen and (max-width: 480px) {
+1840
+{
     html {
         font-size: 14px;
     }
@@ -1834,10 +1835,20 @@ textarea {
     .section {
         padding: 4rem 0;
     }
+ .hero__blob {
+  width: 220px;
+  height: 220px;
+ }
+ .hero__img {
+  width: 160px;
+  height: 160px;
+ }
 
     .section__header {
         margin-bottom: 3rem;
     }
+
+   
 
     .values__grid,
     .skills__container,
