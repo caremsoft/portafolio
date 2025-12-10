@@ -398,12 +398,15 @@ textarea {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 .hero__blob {
     position: relative;
     width: 400px;
+    max-width: 90vw;
     height: 400px;
+    max-height: 90vw;
 }
 
 .hero__blob svg {
